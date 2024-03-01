@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebApplication3.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        header {
+            background-color: #e3e3e3;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+        header h2 {
+            margin-bottom: 10px;
+            font-weight: 700;
+            font-size: 3.25em;
+        }
+        #mainMenu {
+            display: flex;
+            gap: 20px;
+        }
+        #mainMenu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            position: relative; 
+        }
+        #mainMenu a:hover {
+            color: #ff5733; 
+        }
+        #mainMenu a::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px; 
+            bottom: 0;
+            left: 0;
+            background-color: #ff5733; 
+            transform: scaleX(0); 
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+        #mainMenu a:hover::before {
+            transform: scaleX(1); 
+            transform-origin: bottom left;
+        }
+        footer {
+            background-color: #eee;
+            width: 100vw;
+            padding: 10px; 
+            text-align: center; 
+            position: fixed;
+            bottom: 0;
+        }
+    </style>
+
+ 
+
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+</head>
+<body>
+    <header>
+        <h2>title name</h2>
+        <div id="mainMenu">
+            <a href="#" target="_blank">home</a>
+            <a href="#" target="_blank">about</a>
+            <a href="#" target="_blank">contact</a>
+        </div>
+    </header>
+  
+      <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+   <footer>
+       <p>Copyright &copy; <%: DateTime.Now.Year %></p>
+   </footer>
+
+</body>
+</html>
