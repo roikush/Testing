@@ -15,7 +15,7 @@
             font-family: 'Arial', sans-serif;
         }
         header {
-            background-color: #e3e3e3;
+            background-image: linear-gradient(#46bdf1, #81f1f5);
             width: 100vw;
             display: flex;
             align-items: center;
@@ -24,7 +24,8 @@
         }
         header h2 {
             margin-bottom: 10px;
-            font-weight: 700;
+            font-weight: 800;
+            color: #021e0c;
             font-size: 3.25em;
         }
         #mainMenu {
@@ -33,12 +34,12 @@
         }
         #mainMenu a {
             text-decoration: none;
-            color: #333;
+            color: #021e0c;
             font-weight: bold;
             position: relative; 
         }
         #mainMenu a:hover {
-            color: #ff5733; 
+            color: #9800a5; 
         }
         #mainMenu a::before {
             content: '';
@@ -47,7 +48,7 @@
             height: 2px; 
             bottom: 0;
             left: 0;
-            background-color: #ff5733; 
+            background-color: #9800a5; 
             transform: scaleX(0); 
             transform-origin: bottom right;
             transition: transform 0.3s ease-out;
@@ -57,11 +58,11 @@
             transform-origin: bottom left;
         }
         footer {
-            background-color: #eee;
+            background-color: #46bdf1;
             width: 100vw;
             padding: 10px; 
             text-align: center; 
-            position: fixed;
+            position: relative;
             bottom: 0;
         }
     </style>
@@ -74,7 +75,7 @@
 </head>
 <body>
     <header>
-        <h2>title name</h2>
+        <h2>Rotem's Website</h2>
         <div id="mainMenu">
             <a href="#" target="_blank">home</a>
             <a href="#" target="_blank">about</a>

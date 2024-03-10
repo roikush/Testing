@@ -1,91 +1,90 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="WebApplication3.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
         <style>
-            body {
-                font-family: 'Arial', sans-serif;
-                background-color: #f5f5f5;
-                color: #333;
-                margin: 0;
-                padding: 0;
-            }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #81f1f5;
+            color: #333;
+            font-size: 1.3em;
+            margin: 0;
+            padding: 0;
+        }
 
-            form {
-                margin: 2vw;
-                background-color: #fff;
-                padding: 20px;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            }
+        form {
+            width: 60vw;
+            margin: 5vw 20vw;
+            background-color: #eefef4;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
 
-            table {
-                width: 96vw;
-            }
+        table {
+            width: 55vw;
+        }
 
-            td {
-                padding: 10px;
-            }
+        td {
+            padding: 10px;
+        }
 
-            input[type="text"] {
-                width: 98%;
-                padding: 12px;
-                box-sizing: border-box;
-                margin-bottom: 15px;
-                border: 1px solid #ccc;
-                border-radius: 4px;
-                background-color: #f8f8f8;
-                color: #555;
-            }
+        input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8;
+            color: #555;
+        }
 
-            input[type="submit"] {
-                background-color: #007BFF;
-                color: #fff;
-                padding: 15px;
-                cursor: pointer;
-                border: none;
-                border-radius: 4px;
-                transition: background-color 0.3s ease;
-            }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 15px 35px;
+            cursor: pointer;
+            border: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
 
-            input[type="submit"]:hover {
-                background-color: #0056b3;
-            }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
 
-            input[type="text"]:disabled {
-                background-color: #ddd;
-            }
+        input[type="text"]:disabled {
+            background-color: #ddd;
+        }
 
-            #EmailResult,
-            #userNameResult,
-            #firstNameResult,
-            #lastNameResult {
-                display: none;
-                color: #dc3545;
-                font-size: 14px;
-                margin-top: -10px;
-            }
-        </style>
-    <form methood="post" runat="server" onsubmit="return check();">
+        .result {
+            display: none;
+            color: #dc3545;
+            font-size: 14px;
+            margin-top: -10px;
+        }
+    </style>
+
+    <form method="post" runat="server" onsubmit="return check();">
         <table>
             <tr>
                 <td>user name</td>
                 <td><input type="text" id="uName" name="uName" /></td>
-                <td><input type="text" id="userNameResult" disabled style="display:none"/></td>
+                <td><input type="text" id="userNameResult" disabled class="result" /></td>
             </tr>
             <tr>
                 <td>first name</td>
                 <td><input type="text" id="fName" name="fName" /></td>
-                <td><input type="text" id="firstNameResult" disabled style="display:none"/></td>
+                <td><input type="text" id="firstNameResult" disabled class="result" /></td>
             </tr>
             <tr>
                 <td>last name</td>
                 <td><input type="text" id="lName" name="lName" /></td>
-                <td><input type="text" id="lastNameResult" disabled style="display:none" /></td>
+                <td><input type="text" id="lastNameResult" disabled class="result" /></td>
             </tr>
             <tr>
                 <td>email</td>
                 <td><input type="text" id="email" name="email" /></td>
-                <td><input type="text" id="EmailResult" disabled="disabled"  style="display:none" /></td>
-
+                <td><input type="text" id="EmailResult" disabled="disabled" class="result" /></td>
             </tr>
             <tr>
                 <td colspan="2" style="text-align:center";>
@@ -193,9 +192,8 @@
 
             alert("email = " + email);
            
-           }
-    </script>
-    <script>
+        }
+
         function isQuot(name) {
 
             var quot1 = '\"',quot2="\'";
